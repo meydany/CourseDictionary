@@ -1,5 +1,5 @@
 //
-//  GTManager.swift
+//  RMPManager.swift
 //  CourseDictionary
 //
 //  Created by Yoli Meydan on 4/16/18.
@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftSoup
 
-class GTManager {
+class RMPManager {
     
     struct GTResponse {
         var grade: String? = nil
@@ -18,24 +18,36 @@ class GTManager {
         var success: Bool =  false
     }
     
+    struct LinkResponse {
+        var success: Bool = false
+        var link: String = ""
+    }
+    
+    
     class func getTeacherInfo(teacherName: String, completion: @escaping (GTResponse) -> Void){
-        getTeacherLink(name: teacherName) { (response) in
-            if(response.success) {
-                Alamofire.request(response.link).response { (response) in
-                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                        let doc: Document = try! SwiftSoup.parse(utf8Text)
-                        
-                        let grade = self.getAverageGrade(doc: doc)
-                        let comments = self.getComments(doc: doc)
-                        completion(GTResponse(grade: grade, comments: comments, success: true))
+        DispatchQueue.global(qos: .userInteractive).async {
+            getTeacherLink(name: teacherName) { (response) in
+                if(response.success) {
+                    Alamofire.request(response.link).response { (response) in
+                        if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                            let doc: Document = try! SwiftSoup.parse(utf8Text)
+                            
+                            let grade = self.getAverageGrade(doc: doc)
+                            let comments = self.getComments(doc: doc)
+                            DispatchQueue.main.async {
+                                completion(GTResponse(grade: grade, comments: comments, success: true))
+                            }
+                        }
                     }
                 }
             }
+            DispatchQueue.main.async {
+                completion(GTResponse())
+            }
         }
-        completion(GTResponse())
     }
     
-   private class func getTeacherLink(name: String, completion: @escaping (LinkResponse) -> Void) {
+    private class func getTeacherLink(name: String, completion: @escaping (LinkResponse) -> Void) {
         let teacher = name.capitalized.replacingOccurrences(of: " ", with: "+")
         let link = "http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=University+of+North+Carolina+at+Chapel+Hill&schoolID=&query=\(teacher)"
         

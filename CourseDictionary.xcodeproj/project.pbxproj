@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EA3DDB33D90A257DB3E1524 /* Pods_CourseDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 874C83D9CACAD707B31C3110 /* Pods_CourseDictionary.framework */; };
+		8621258920856B6100F00DA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8621258820856B6100F00DA3 /* Extensions.swift */; };
 		864DD541207DD29B00C7A30B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD540207DD29B00C7A30B /* AppDelegate.swift */; };
 		864DD543207DD29B00C7A30B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD542207DD29B00C7A30B /* ViewController.swift */; };
 		864DD546207DD29B00C7A30B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864DD544207DD29B00C7A30B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0C873A75275FBD6CA0E3F514 /* Pods-CourseDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseDictionary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CourseDictionary/Pods-CourseDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 		35CC6A2496DF5F3A8D621A3B /* Pods-CourseDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseDictionary.release.xcconfig"; path = "Pods/Target Support Files/Pods-CourseDictionary/Pods-CourseDictionary.release.xcconfig"; sourceTree = "<group>"; };
+		8621258820856B6100F00DA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		864DD53D207DD29B00C7A30B /* CourseDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864DD540207DD29B00C7A30B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		864DD542207DD29B00C7A30B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,16 +76,41 @@
 		864DD53F207DD29B00C7A30B /* CourseDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				864DD540207DD29B00C7A30B /* AppDelegate.swift */,
-				864DD542207DD29B00C7A30B /* ViewController.swift */,
-				864DD544207DD29B00C7A30B /* Main.storyboard */,
+				86EFCF612085706E00C7B1D7 /* Controller */,
+				86EFCF602085706A00C7B1D7 /* View */,
+				86EFCF5F2085705B00C7B1D7 /* Model */,
 				864DD547207DD29B00C7A30B /* Assets.xcassets */,
-				864DD549207DD29B00C7A30B /* LaunchScreen.storyboard */,
 				864DD54C207DD29B00C7A30B /* Info.plist */,
-				86644F42208513C8004FAE57 /* RMPManager.swift */,
-				86644F44208513D1004FAE57 /* GTManager.swift */,
 			);
 			path = CourseDictionary;
+			sourceTree = "<group>";
+		};
+		86EFCF5F2085705B00C7B1D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86644F44208513D1004FAE57 /* GTManager.swift */,
+				86644F42208513C8004FAE57 /* RMPManager.swift */,
+				8621258820856B6100F00DA3 /* Extensions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86EFCF602085706A00C7B1D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				864DD549207DD29B00C7A30B /* LaunchScreen.storyboard */,
+				864DD544207DD29B00C7A30B /* Main.storyboard */,
+				864DD540207DD29B00C7A30B /* AppDelegate.swift */,
+				864DD542207DD29B00C7A30B /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86EFCF612085706E00C7B1D7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B38C9A2EBA37A86375D626B3 /* Frameworks */ = {
@@ -211,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8621258920856B6100F00DA3 /* Extensions.swift in Sources */,
 				86644F45208513D1004FAE57 /* GTManager.swift in Sources */,
 				864DD543207DD29B00C7A30B /* ViewController.swift in Sources */,
 				86644F43208513C8004FAE57 /* RMPManager.swift in Sources */,
