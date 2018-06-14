@@ -12,13 +12,14 @@ import SwiftSoup
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var schoolField: UITextField!
-    @IBOutlet weak var courseField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GTManager.getCourseInfo(course: "MATH233")
+//        RMPManager.getTeacherInfo(teacherName: "Lindsay Waldrop") { (response) in
+//            print(response.grade)
+//            print()
+//            print(response.comments)
+//        }
         
 //        RMPManager.getTeacherInfo(teacherName: "jeannie loeb") { (response) in
 //            if(response.success) {

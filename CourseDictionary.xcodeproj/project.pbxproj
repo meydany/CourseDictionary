@@ -11,11 +11,10 @@
 		8621258920856B6100F00DA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8621258820856B6100F00DA3 /* Extensions.swift */; };
 		864DD541207DD29B00C7A30B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD540207DD29B00C7A30B /* AppDelegate.swift */; };
 		864DD543207DD29B00C7A30B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD542207DD29B00C7A30B /* ViewController.swift */; };
-		864DD546207DD29B00C7A30B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864DD544207DD29B00C7A30B /* Main.storyboard */; };
 		864DD548207DD29B00C7A30B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864DD547207DD29B00C7A30B /* Assets.xcassets */; };
-		864DD54B207DD29B00C7A30B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864DD549207DD29B00C7A30B /* LaunchScreen.storyboard */; };
 		86644F43208513C8004FAE57 /* RMPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86644F42208513C8004FAE57 /* RMPManager.swift */; };
 		86644F45208513D1004FAE57 /* GTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86644F44208513D1004FAE57 /* GTManager.swift */; };
+		86AEBB1420D31A1000DC2849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AEBB1320D31A1000DC2849 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +24,11 @@
 		864DD53D207DD29B00C7A30B /* CourseDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864DD540207DD29B00C7A30B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		864DD542207DD29B00C7A30B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		864DD545207DD29B00C7A30B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		864DD547207DD29B00C7A30B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		864DD54A207DD29B00C7A30B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		864DD54C207DD29B00C7A30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86644F42208513C8004FAE57 /* RMPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMPManager.swift; sourceTree = "<group>"; };
 		86644F44208513D1004FAE57 /* GTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTManager.swift; sourceTree = "<group>"; };
+		86AEBB1320D31A1000DC2849 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		874C83D9CACAD707B31C3110 /* Pods_CourseDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,8 +96,7 @@
 		86EFCF602085706A00C7B1D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				864DD549207DD29B00C7A30B /* LaunchScreen.storyboard */,
-				864DD544207DD29B00C7A30B /* Main.storyboard */,
+				86AEBB1320D31A1000DC2849 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,9 +179,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				864DD54B207DD29B00C7A30B /* LaunchScreen.storyboard in Resources */,
 				864DD548207DD29B00C7A30B /* Assets.xcassets in Resources */,
-				864DD546207DD29B00C7A30B /* Main.storyboard in Resources */,
+				86AEBB1420D31A1000DC2849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,25 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		864DD544207DD29B00C7A30B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				864DD545207DD29B00C7A30B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		864DD549207DD29B00C7A30B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				864DD54A207DD29B00C7A30B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		864DD54D207DD29B00C7A30B /* Debug */ = {
@@ -380,6 +357,7 @@
 			baseConfigurationReference = 0C873A75275FBD6CA0E3F514 /* Pods-CourseDictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9EKLF2UG2H;
 				INFOPLIST_FILE = CourseDictionary/Info.plist;
@@ -396,6 +374,7 @@
 			baseConfigurationReference = 35CC6A2496DF5F3A8D621A3B /* Pods-CourseDictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9EKLF2UG2H;
 				INFOPLIST_FILE = CourseDictionary/Info.plist;

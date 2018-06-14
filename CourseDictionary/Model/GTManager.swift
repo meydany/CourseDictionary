@@ -12,7 +12,17 @@ import SwiftSoup
 
 class GTManager {
     
-    class func getCourseInfo(course: String) {
+    struct GTResponse {
+        var grades: [String]?
+        var success: Bool = false
+        static var FailedResponse: GTResponse {
+            get {
+                return GTResponse(grades: nil, success: false)
+            }
+        }
+    }
+    
+    class func getCourseInfo(course: String, completion: @escaping (GTResponse) -> ()) {
         if(course.length != 7) {
             print("Wrong format")
         }
@@ -20,26 +30,35 @@ class GTManager {
         let courseNum =  course[4..<7]
         
         DispatchQueue.global(qos: .userInteractive).async {
-            getClassLink(courseTitle: course[0..<4]) { (response) in
-                let link = response
-                if(link != nil) {
-                    Alamofire.request(link!).response { response in
-                        if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                            let doc: Document = try! SwiftSoup.parse(utf8Text)
-                            let courseGroup = try! doc.body()?.getElementsByClass("margin-bottom-5")
-                            for course in (courseGroup?.array())! {
-                                if(try! course.getElementsByTag("strong").text() == courseNum) {
-                                    print(try! course.getElementsByTag("a").attr("href"))
-                                }
-                            }
-                        }
-                    }
+            getClassLink(courseTitle: courseTitle) { (response) in
+                if let link = response {
+                    getCourseLink(courseNum: courseNum, link: link, completion: { (response) in
+                        print(response!)
+                    })
                 }
             }
         }
         
     }
-    class func getClassLink(courseTitle: String, completion: @escaping (String?) -> Void) {
+    
+    //Gets link for 3 number course identifier (233, 101, 401, etc)
+    private class func getCourseLink(courseNum: String, link: String, completion: @escaping (String?) -> ()) {
+        Alamofire.request(link).response { response in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                let doc: Document = try! SwiftSoup.parse(utf8Text)
+                let courseGroup = try! doc.body()?.getElementsByClass("margin-bottom-5")
+                for course in (courseGroup?.array())! {
+                    if(try! course.getElementsByTag("strong").text() == courseNum) {
+                        let courseLink = try! course.getElementsByTag("a").attr("href")
+                        completion("http://gradetoday.com\(courseLink)")
+                    }
+                }
+            }
+        }
+    }
+    
+    //Gets link for 4 letter course identifier (MATH, CHEM, COMP, etc)
+    private class func getClassLink(courseTitle: String, completion: @escaping (String?) -> (Void)) {
         let link = "http://gradetoday.com/departments/3"
         Alamofire.request(link).response { response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
@@ -52,17 +71,15 @@ class GTManager {
                             if(try! innerClass.getElementsByTag("strong").text() == courseTitle.uppercased()) {
                                 let classLink = try! innerClass.getElementsByTag("a").attr("href")
                                 completion("http://gradetoday.com\(classLink)")
-                                return
                             }
                         }
                     }
                 }
             }
         }
-        print("Course doesn't exist")
     }
     
-    class func getGrades(link: String, completion: @escaping ([String]) -> Void) {
+    private class func getGrades(link: String, completion: @escaping ([String]) -> ()) {
         var grades: [String] = []
         
         Alamofire.request(link).response { response in
@@ -78,10 +95,9 @@ class GTManager {
                     grades.append(String(record[lowerIndex..<upperIndex]))
                 }
                 completion(grades)
-
+                return
             }
         }
-        completion(grades)
     }
     
 }
