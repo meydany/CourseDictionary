@@ -10,11 +10,14 @@
 		3EA3DDB33D90A257DB3E1524 /* Pods_CourseDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 874C83D9CACAD707B31C3110 /* Pods_CourseDictionary.framework */; };
 		8621258920856B6100F00DA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8621258820856B6100F00DA3 /* Extensions.swift */; };
 		864DD541207DD29B00C7A30B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD540207DD29B00C7A30B /* AppDelegate.swift */; };
-		864DD543207DD29B00C7A30B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DD542207DD29B00C7A30B /* ViewController.swift */; };
 		864DD548207DD29B00C7A30B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864DD547207DD29B00C7A30B /* Assets.xcassets */; };
 		86644F43208513C8004FAE57 /* RMPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86644F42208513C8004FAE57 /* RMPManager.swift */; };
 		86644F45208513D1004FAE57 /* GTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86644F44208513D1004FAE57 /* GTManager.swift */; };
 		86AEBB1420D31A1000DC2849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AEBB1320D31A1000DC2849 /* Main.storyboard */; };
+		86AEBB1820D330F100DC2849 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEBB1720D330F100DC2849 /* SearchViewController.swift */; };
+		86AEBB1A20D3318200DC2849 /* RisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEBB1920D3318200DC2849 /* RisingViewController.swift */; };
+		86AEBB1E20D4A62500DC2849 /* SavedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEBB1D20D4A62500DC2849 /* SavedCellView.swift */; };
+		86AEBB2020D4BCD800DC2849 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEBB1F20D4BCD800DC2849 /* CourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +26,15 @@
 		8621258820856B6100F00DA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		864DD53D207DD29B00C7A30B /* CourseDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864DD540207DD29B00C7A30B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		864DD542207DD29B00C7A30B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		864DD547207DD29B00C7A30B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		864DD54C207DD29B00C7A30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86644F42208513C8004FAE57 /* RMPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMPManager.swift; sourceTree = "<group>"; };
 		86644F44208513D1004FAE57 /* GTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTManager.swift; sourceTree = "<group>"; };
 		86AEBB1320D31A1000DC2849 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		86AEBB1720D330F100DC2849 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		86AEBB1920D3318200DC2849 /* RisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingViewController.swift; sourceTree = "<group>"; };
+		86AEBB1D20D4A62500DC2849 /* SavedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCellView.swift; sourceTree = "<group>"; };
+		86AEBB1F20D4BCD800DC2849 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		874C83D9CACAD707B31C3110 /* Pods_CourseDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,7 @@
 				86EFCF602085706A00C7B1D7 /* View */,
 				86EFCF5F2085705B00C7B1D7 /* Model */,
 				864DD547207DD29B00C7A30B /* Assets.xcassets */,
+				864DD540207DD29B00C7A30B /* AppDelegate.swift */,
 				864DD54C207DD29B00C7A30B /* Info.plist */,
 			);
 			path = CourseDictionary;
@@ -97,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				86AEBB1320D31A1000DC2849 /* Main.storyboard */,
+				86AEBB1D20D4A62500DC2849 /* SavedCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,8 +112,9 @@
 		86EFCF612085706E00C7B1D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				864DD540207DD29B00C7A30B /* AppDelegate.swift */,
-				864DD542207DD29B00C7A30B /* ViewController.swift */,
+				86AEBB1720D330F100DC2849 /* SearchViewController.swift */,
+				86AEBB1920D3318200DC2849 /* RisingViewController.swift */,
+				86AEBB1F20D4BCD800DC2849 /* CourseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,12 +222,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CourseDictionary/Pods-CourseDictionary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
 			);
@@ -234,9 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AEBB1820D330F100DC2849 /* SearchViewController.swift in Sources */,
 				8621258920856B6100F00DA3 /* Extensions.swift in Sources */,
+				86AEBB1A20D3318200DC2849 /* RisingViewController.swift in Sources */,
 				86644F45208513D1004FAE57 /* GTManager.swift in Sources */,
-				864DD543207DD29B00C7A30B /* ViewController.swift in Sources */,
+				86AEBB1E20D4A62500DC2849 /* SavedCellView.swift in Sources */,
+				86AEBB2020D4BCD800DC2849 /* CourseViewController.swift in Sources */,
 				86644F43208513C8004FAE57 /* RMPManager.swift in Sources */,
 				864DD541207DD29B00C7A30B /* AppDelegate.swift in Sources */,
 			);

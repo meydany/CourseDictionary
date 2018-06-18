@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIColor {
+    static let CarolinaBlue = UIColor(red: 153/255, green: 186/255, blue: 221/255, alpha: 1)
+    static let DarkBlue = UIColor(red: 34/255, green: 53/255, blue: 94/255, alpha: 1)
+    static let ThemeGreen = UIColor(red: 46/255, green: 213/255, blue: 115/255, alpha: 1)
+    static let ThemeYellow = UIColor(red: 236/255, green: 204/255, blue: 104/255, alpha: 1)
+    static let ThemeRed = UIColor(red: 255/255, green: 71/255, blue: 87/255, alpha: 1)
+}
+
 
 extension StringProtocol where Index == String.Index {
     func index<T: StringProtocol>(of string: T, options: String.CompareOptions = []) -> Index? {
